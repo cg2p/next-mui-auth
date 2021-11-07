@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
-import Copyright from '@components/Copyright';
 
 const footers = [
   { title: 'Company',
@@ -28,11 +27,42 @@ const footers = [
   },
 ];
 
-function Footer() {
+const logline = [
+  {"status":"OK",
+    "result":
+      { "usage":
+        {"text_units":1,"text_characters":16,"features":6},
+        "sentiment":
+        {"document":
+          {"score":-0.933999,"label":"negative"}
+        },
+        "semantic_roles":[],
+        "language":"en",
+        "keywords": [
+          {"text":"big bad wolf",
+          "sentiment":
+            {"score":-0.933999,
+            "label":"negative"
+          },
+          "relevance":1,"emotion":
+          {"sadness":0.581607,
+          "joy":0.004631,
+          "fear":0.326501,
+          "disgust":0.229823,
+          "anger":0.190403},
+          "count":1}],
+          "entities":[],
+          "emotion":
+          {"document":
+            {"emotion":
+              {"sadness":0.581607,
+              "joy":0.004631,"fear":0.326501,"disgust":0.229823,"anger":0.190403}}},"concepts":[{"text":"Big Bad","relevance":0.91136,"dbpedia_resource":"http://dbpedia.org/resource/Big_Bad"},{"text":"Big Bad Wolf","relevance":0.886784,"dbpedia_resource":"http://dbpedia.org/resource/Big_Bad_Wolf"}]}};
+];
+
+function LoglineAnalysis() {
 
   return (
     <React.Fragment>
-      {/* Footer */}
       <Container
         maxWidth="md"
         component="footer"
@@ -60,13 +90,9 @@ function Footer() {
             </Grid>
           ))}
         </Grid>
-        <Box mt={5}>
-          <Copyright sx={{ mt: 5 }} />
-        </Box>
       </Container>
-      {/* End footer */}
     </React.Fragment>
   );
 }
   
-export default Footer;
+export default LoglineAnalysis;
